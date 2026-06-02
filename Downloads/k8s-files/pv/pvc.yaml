@@ -5,7 +5,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: mysc-blueapp
   resources:
     requests:
       storage: 10Gi
+  storageClassName: mysc-blueapp
+

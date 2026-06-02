@@ -17,22 +17,19 @@ spec:
       maxUnavailable: 25%
   template:
     metadata:
-      name: myyellowpods
       labels:
         app: yellow-app
     spec:
       containers:
-      - name: myyellow-container
-        image: nginx:latest
-        ports:
-          - containerPort: 80
-        volumeMounts:
-          - name: mystorageaws
-            mountPath: /usr/share/nginx/html
+        - name: myyellow-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: mystorageaws
+              mountPath: /usr/share/nginx/html
+
       volumes:
         - name: mystorageaws
           persistentVolumeClaim:
-              claimName: mypvc-blueapp
-            
-
-        
+            claimName: mypvc-blueapp
