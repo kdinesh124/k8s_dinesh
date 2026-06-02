@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydpyellow
+  namespace: dev
+  annotations:
+    kubernetes.io/change-cause: "Deploy to yellowapp"
+spec:
+  minReadySeconds: 5
+  replicas: 6
+  selector:
+    matchLabels:
+      app: yellow-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+  template:
+    metadata:
+      name: myyellowpods
+      labels:
+        app: yellow-app
+    spec:
+      containers:
+      - name: myyellow-container
+        image: 
+        ports:
+          - containerPort: 80
+        volume:
+          - persistentVolumeClaim:
+              claimName: mypvc-blueapp
+            
+
+        
