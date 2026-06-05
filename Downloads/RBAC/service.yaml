@@ -1,7 +1,7 @@
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
-  name: myapp
+  name: myservice
   namespace: dev
 spec:
   type: NodepPort
@@ -17,4 +17,3 @@ spec:
 
 
 
-      

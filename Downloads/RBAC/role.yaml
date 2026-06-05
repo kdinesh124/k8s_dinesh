@@ -8,4 +8,7 @@ rules:
     resources:
       - pods
     verbs:
-      -get
+      - get
+      - list
+      - watch
+      
